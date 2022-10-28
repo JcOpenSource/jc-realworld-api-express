@@ -1,5 +1,10 @@
 
+> 开发环境：win10
+
 ## 项目启动
+```
+nodemon app.js
+```
 
 ## 项目结构
 ```
@@ -30,6 +35,7 @@ npm init -y
 npm i express
 npm install morgan
 npm install cors
+npm install mongoose
 ```
 
 表示跨域请求设置成功： Access-Control-Allow-Origin *

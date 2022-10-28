@@ -2,6 +2,9 @@ const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
 const router = require('./router') // 默认是index.js文件
+const errorhandler = require('./middleware/error-handler')
+// 连接数据发动模型
+require('./model')
 
 const app = express()
 
@@ -22,6 +25,9 @@ const PORT = process.env.PORT || 3000
 
 // 挂载路由 '/api' 设置公共开头
 app.use('/api', router)
+
+// 挂载统一处理服务端错误中间件
+app.use(errorhandler())
 
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`)
